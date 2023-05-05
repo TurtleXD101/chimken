@@ -201,6 +201,22 @@ public class PlayerMovement : MonoBehaviour
                 moving = true;
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (CanMove(Vector3.up))
+            {
+                targetPosition = transform.position + cameraRotator.transform.up;
+                startPosition = transform.position;
+                moving = true;
+            }
+            else if (CanMoveUp(Vector3.up))
+            {
+                targetPosition = transform.position + cameraRotator.transform.up + Vector3.up;
+                startPosition = transform.position;
+                moving = true;
+            }
+
+        }
     }
 
     // Check if the player can move
